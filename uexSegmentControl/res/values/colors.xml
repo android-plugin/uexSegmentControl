@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	
+	<color name="plugin_hlv_iv_focus">#ff0000</color>
+	<color name="plugin_hlv_iv_unfocus">#00ff0000</color>
+	<color name="plugin_hlv_tv_focus">#ffff0000</color>
+	<color name="plugin_hlv_tv_unfocus">#ff9B9B9B</color>
+	<color name="plugin_gvt_tv_selected">#fff</color>
+	<color name="plugin_gvt_tv_focus">#0f0</color>
+	<color name="plugin_gvt_tv_default">#F9F9F9</color>
+</resources>
