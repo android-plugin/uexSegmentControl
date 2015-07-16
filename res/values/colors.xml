@@ -19,11 +19,11 @@
 	<color name="widget_bg_color">#333333</color>
 	<color name="activity_window_background_color">#60000000</color>
 	
-	<color name="plugin_hlv_iv_focus">#ff0000</color>
-	<color name="plugin_hlv_iv_unfocus">#00ff0000</color>
-	<color name="plugin_hlv_tv_focus">#ffff0000</color>
-	<color name="plugin_hlv_tv_unfocus">#ff9B9B9B</color>
-	<color name="plugin_gvt_tv_selected">#fff</color>
-	<color name="plugin_gvt_tv_focus">#0f0</color>
-	<color name="plugin_gvt_tv_default">#F9F9F9</color>
+	<color name="plugin_uexsegmentcontrol_hlv_iv_focus">#ff0000</color>
+	<color name="plugin_uexsegmentcontrol_hlv_iv_unfocus">#00ff0000</color>
+	<color name="plugin_uexsegmentcontrol_hlv_tv_focus">#ffff0000</color>
+	<color name="plugin_uexsegmentcontrol_hlv_tv_unfocus">#ff9B9B9B</color>
+	<color name="plugin_uexsegmentcontrol_gvt_tv_selected">#fff</color>
+	<color name="plugin_uexsegmentcontrol_gvt_tv_focus">#0f0</color>
+	<color name="plugin_uexsegmentcontrol_gvt_tv_default">#F9F9F9</color>
 </resources>

@@ -1,12 +1,5 @@
 package org.zywx.wbpalmstar.plugin.uexsegmentcontrol;
 
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
-
-import java.util.List;
-
-import org.zywx.wbpalmstar.engine.universalex.EUExUtil;
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
@@ -14,6 +7,13 @@ import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import org.zywx.wbpalmstar.engine.universalex.EUExUtil;
+
+import java.util.List;
+
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 public class ZYWXTabIndicator extends HorizontalScrollView {
 	private static final CharSequence EMPTY_TITLE = "";
@@ -86,7 +86,8 @@ public class ZYWXTabIndicator extends HorizontalScrollView {
     }
 
     private void addTab(int index, CharSequence text) {
-    	LinearLayout ll = (LinearLayout) View.inflate(getContext(), EUExUtil.getResLayoutID("plugin_indicator_item"), null);
+    	LinearLayout ll = (LinearLayout) View.inflate(getContext(),
+                EUExUtil.getResLayoutID("plugin_uexsegmentcontrol_indicator_item"), null);
     	TextView tabView = (TextView) ll.findViewById(EUExUtil.getResIdID("plugin_hlv_tv"));
         tabView.setText(text);
         ll.setId(index);

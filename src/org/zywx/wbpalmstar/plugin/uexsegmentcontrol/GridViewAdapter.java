@@ -1,9 +1,5 @@
 package org.zywx.wbpalmstar.plugin.uexsegmentcontrol;
 
-import java.util.List;
-
-import org.zywx.wbpalmstar.engine.universalex.EUExUtil;
-
 import android.content.Context;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,6 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.zywx.wbpalmstar.engine.universalex.EUExUtil;
+
+import java.util.List;
 
 public class GridViewAdapter extends BaseAdapter {
 
@@ -53,7 +53,7 @@ public class GridViewAdapter extends BaseAdapter {
 		Holder holder = null;
 		if (convertView == null) {
 			holder = new Holder();
-			view = View.inflate(context, EUExUtil.getResLayoutID("plugin_item_edit"), null);
+			view = View.inflate(context, EUExUtil.getResLayoutID("plugin_uexsegmentcontrol_item_edit"), null);
 			holder.xx = (ImageView) view.findViewById(EUExUtil.getResIdID("plugin_item_edit_iv"));
 			holder.tv = (TextView) view.findViewById(EUExUtil.getResIdID("plugin_item_bt"));
 			view.setTag(holder);

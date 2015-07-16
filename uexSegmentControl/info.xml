@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uexplugins>
-    <plugin uexName="uexSegmentControl" version="3.0.2" build="2">
-        <info>2:更新适配机型使用的方法</info>
-		<build>0:分段显示控件</build>
+    <plugin uexName="uexSegmentControl" version="3.0.0" build="0">
+		<build>0:分段选择器插件</build>
     </plugin>
 </uexplugins>
