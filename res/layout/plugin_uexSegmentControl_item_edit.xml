@@ -4,7 +4,7 @@
     android:layout_height="wrap_content" >
 
     <TextView
-        android:id="@+id/plugin_item_bt"
+        android:id="@+id/plugin_uexsegmentcontrol_item_bt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/plugin_uexsegmentcontrol_gvt_tv_selector"
@@ -19,7 +19,7 @@
         android:textSize="15sp" />
 
     <ImageView
-        android:id="@+id/plugin_item_edit_iv"
+        android:id="@+id/plugin_uexsegmentcontrol_item_edit_iv"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginLeft="-8dp"
