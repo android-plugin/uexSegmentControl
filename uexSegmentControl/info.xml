@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uexplugins>
-    <plugin uexName="uexSegmentControl" version="3.0.0" build="0">
+    <plugin uexName="uexSegmentControl" version="3.0.3" build="3">
+        <info>3:修正资源命名隐患,修正部分部分bug,参照文档修正接口逻辑,修正回调类型,添加开源声明.</info>
+        <build>2:更新适配机型使用的方法</build>
 		<build>0:分段选择器插件</build>
     </plugin>
 </uexplugins>

@@ -1,3 +1,21 @@
+/*
+ *  Copyright (C) 2014 The AppCan Open Source Project.
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Lesser General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Lesser General Public License for more details.
+
+ *  You should have received a copy of the GNU Lesser General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 package org.zywx.wbpalmstar.plugin.uexsegmentcontrol;
 
 import android.content.Context;
@@ -26,7 +44,9 @@ public class ZYWXTabIndicator extends HorizontalScrollView {
         public void onClick(View view) {
         	mSelectedTabIndex = view.getId();
         	setCurrentItem(mSelectedTabIndex);
-            onTabViewClickListener.onTabViewClick(mSelectedTabIndex, (TextView)((LinearLayout)view).getChildAt(0));
+        	if(onTabViewClickListener != null){
+        		onTabViewClickListener.onTabViewClick(mSelectedTabIndex, (TextView)((LinearLayout)view).getChildAt(0));
+        	}
         }
     };
 
@@ -88,7 +108,7 @@ public class ZYWXTabIndicator extends HorizontalScrollView {
     private void addTab(int index, CharSequence text) {
     	LinearLayout ll = (LinearLayout) View.inflate(getContext(),
                 EUExUtil.getResLayoutID("plugin_uexsegmentcontrol_indicator_item"), null);
-    	TextView tabView = (TextView) ll.findViewById(EUExUtil.getResIdID("plugin_hlv_tv"));
+    	TextView tabView = (TextView) ll.findViewById(EUExUtil.getResIdID("plugin_uexsegmentcontrol_hlv_tv"));
         tabView.setText(text);
         ll.setId(index);
         ll.setFocusable(true);
@@ -114,9 +134,11 @@ public class ZYWXTabIndicator extends HorizontalScrollView {
     }
 
     public void setCurrentItem(int item) {
-        mSelectedTabIndex = item;
-
         final int tabCount = mTabLayout.getChildCount();
+        if(item >= tabCount || mSelectedTabIndex == item){
+        	return;
+        }
+        mSelectedTabIndex = item;
         for (int i = 0; i < tabCount; i++) {
             final View child = mTabLayout.getChildAt(i);
             final boolean isSelected = (i == item);

@@ -1,3 +1,21 @@
+/*
+ *  Copyright (C) 2014 The AppCan Open Source Project.
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Lesser General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Lesser General Public License for more details.
+
+ *  You should have received a copy of the GNU Lesser General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 package org.zywx.wbpalmstar.plugin.uexsegmentcontrol;
 
 import android.content.Context;
@@ -71,10 +89,11 @@ public class DragGridView extends GridView {
   
     private void onDrop(int x, int y) {  
         int tempPostion = pointToPosition(x, y);  
-        GridViewAdapter mDragAdapter = (GridViewAdapter) getAdapter(); 
+        //GridViewAdapter mDragAdapter = (GridViewAdapter) getAdapter(); 
         if(tempPostion != AdapterView.INVALID_POSITION) {
         	dropPosition = tempPostion;  
-//        	mDragAdapter.exchange(dragPosition, dropPosition);
+        	//mDragAdapter.exchange(dragPosition, dropPosition);
+        	//mDragAdapter.notifyDataSetInvalidated();
         }
     }  
   
@@ -154,6 +173,7 @@ public class DragGridView extends GridView {
     	if(dposition == -1 || dposition < 1) {
     		return;
     	}
+    	isMoving = true;
     	dropPosition = dposition;
     	if(dragPosition != startPosition) {
     		dragPosition = startPosition;
@@ -165,11 +185,12 @@ public class DragGridView extends GridView {
     		moveCount = 0;
     	}
     	if(moveCount == 0) {
+    		isMoving = false;
     		return;
     	}
     	int moveCount_abs = Math.abs(moveCount);
-    	ViewGroup viewGroup = (ViewGroup) getChildAt(dragPosition);
-//    	viewGroup.setVisibility(View.INVISIBLE);//隐藏拖动的视图
+    	//ViewGroup viewGroup = (ViewGroup) getChildAt(dragPosition);
+    	//viewGroup.setVisibility(View.INVISIBLE);//隐藏拖动的视图
     	float to_x = 1; 
         float to_y;
         float x_vlaue = 1.0f;  
@@ -202,9 +223,8 @@ public class DragGridView extends GridView {
                     to_y = 0;  
                 } 
 			}
-			ViewGroup moveGroup = (ViewGroup) getChildAt(holdPosition);
+			final ViewGroup moveGroup = (ViewGroup) getChildAt(holdPosition);
 			Animation moveAnimation = getMoveAnimation(to_x, to_y);
-			moveGroup.startAnimation(moveAnimation);
 			if(holdPosition == dropPosition) {
 				LastAnimationID = moveAnimation.toString();
 			}
@@ -222,16 +242,18 @@ public class DragGridView extends GridView {
 				
 				@Override
 				public void onAnimationEnd(Animation animation) {
+					moveGroup.clearAnimation();
 					if (animation.toString().equalsIgnoreCase(LastAnimationID)) { 
 						GridViewAdapter adapter = (GridViewAdapter) getAdapter();
 						adapter.exchange(startPosition, dropPosition);
-						adapter.notifyDataSetInvalidated();
-                        startPosition = dropPosition;  
-                        dragPosition = dropPosition;  
-                        isMoving = false;  
-                    }  
+						//adapter.notifyDataSetInvalidated();
+                        startPosition = dropPosition;
+                        dragPosition = dropPosition;
+                        isMoving = false;
+                    }
 				}
 			});
+			moveGroup.startAnimation(moveAnimation);
 		}
     }
     
@@ -258,7 +280,7 @@ public class DragGridView extends GridView {
 					int y = (int) ev.getY();//点击的y位置
 					startPosition = position;
 					dragPosition = position;
-					if(position <= 1) {
+					if(position <= 0) {
 						return false;
 					}
 					ViewGroup dragViewGroup = (ViewGroup) getChildAt(dragPosition - getFirstVisiblePosition());

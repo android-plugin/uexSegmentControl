@@ -23,7 +23,12 @@
                         "数码", "移动互联", "家居", "旅游", "健康", "读书", "酒香", "教育", "亲子", "葡萄酒",
                         "暴雪游戏", "情感", "政务"],
                     showData:["头条", "娱乐", "体育", "北京", "NBA","科技", "段子", "旅游", "汽车", "时尚"],
-                    maxShow:25
+                    maxShow:25,
+                    isExpand:1,
+                    expandOpenIcon:'res://btn_edit.png',
+                    expandCloseIcon:'res://1Normal.png',
+                    showedLable:'我的频道',
+                    addLable:'点击添加'
 			    }
 		};
 		uexSegmentControl.open(JSON.stringify(obj));
@@ -45,10 +50,10 @@
 	window.uexOnload = function(){
 		
 		uexSegmentControl.onItemClick = function(data) {
-			alert(data);
+			alert(JSON.stringify(data));
 		}
 	    uexSegmentControl.onDataChange = function(data) {
-			alert(data);
+			alert(JSON.stringify(data));
 		}
 	}
 	
@@ -59,6 +64,7 @@
 	<div class="tit">EUExSegmentControl</div>
 	<div class="conbor">
 		<div class="consj">
+			<br><br><br><br><br><br><br>
 			<input type="button" class="btn" value="open" onclick=show()>
 			<input type="button" class="btn" value="close" onclick=dismiss()>
 			<input id="ci" type="text" class="text" value="0" maxLength="3">
