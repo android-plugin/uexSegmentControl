@@ -70,7 +70,7 @@ public class ZYWXTabIndicator extends HorizontalScrollView {
 		this.onTabViewClickListener = onTabViewClickListener;
 	}
 
-    public int getmSelectedTabIndex() {
+    public int getSelectedTabIndex() {
 		return mSelectedTabIndex;
 	}
 
@@ -135,8 +135,8 @@ public class ZYWXTabIndicator extends HorizontalScrollView {
 
     public void setCurrentItem(int item) {
         final int tabCount = mTabLayout.getChildCount();
-        if(item >= tabCount || mSelectedTabIndex == item){
-        	return;
+        if(item >= tabCount){
+        	item = tabCount - 1;
         }
         mSelectedTabIndex = item;
         for (int i = 0; i < tabCount; i++) {
