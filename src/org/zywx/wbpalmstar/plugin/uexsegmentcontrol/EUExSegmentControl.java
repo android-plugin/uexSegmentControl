@@ -347,6 +347,7 @@ public class EUExSegmentControl extends EUExBase implements OnClickListener,
 				indicator.setVisibility(View.VISIBLE);
 				tv.setVisibility(View.GONE);
 				back.setVisibility(View.GONE);
+				indicator.setCurrentItem(indicator.getSelectedTabIndex());
 			}
 		}
 	}
