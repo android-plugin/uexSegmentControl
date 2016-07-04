@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="wrap_content" android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/plugin_uexsegmentcontrol_item_bt"
-        android:layout_width="match_parent"
+    <TextView android:id="@+id/plugin_uexsegmentcontrol_item_bt" android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/plugin_uexsegmentcontrol_gvt_tv_selector"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentBottom="true"
-        android:padding="5dp"
-        android:singleLine="true"
-        android:gravity="center"
-        android:textColor="@android:color/black"
-        android:textSize="15sp" />
+        android:layout_marginLeft="6dp" android:layout_marginRight="6dp"
+        android:layout_marginTop="10dp" android:layout_alignParentBottom="true"
+        android:padding="5dp" android:singleLine="true" android:gravity="center"
+        android:textColor="@android:color/black" android:textSize="15sp" />
 
-    <ImageView
-        android:id="@+id/plugin_uexsegmentcontrol_item_edit_iv"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="-8dp"
+    <ImageView android:id="@+id/plugin_uexsegmentcontrol_item_edit_iv" android:layout_width="30dp"
+        android:layout_height="30dp" android:layout_marginLeft="-8dp"
         android:background="@drawable/plugin_uexsegmentcontrol_btn_edit"
         android:visibility="invisible" />
 
