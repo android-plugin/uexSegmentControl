@@ -20,7 +20,7 @@ package org.zywx.wbpalmstar.plugin.uexsegmentcontrol.VO;
 
 import java.io.Serializable;
 
-public class OpenDataVO implements Serializable{
+public class OpenDataVO implements Serializable {
     private static final long serialVersionUID = 2341754908606349258L;
     private double left = 0;
     private double top = 0;
@@ -29,7 +29,7 @@ public class OpenDataVO implements Serializable{
     private DataInfoVO dataInfo;
 
     public int getLeft() {
-        return (int)left;
+        return (int) left;
     }
 
     public void setLeft(double left) {
@@ -37,7 +37,7 @@ public class OpenDataVO implements Serializable{
     }
 
     public int getTop() {
-        return (int)top;
+        return (int) top;
     }
 
     public void setTop(double top) {
@@ -45,7 +45,7 @@ public class OpenDataVO implements Serializable{
     }
 
     public int getWidth() {
-        return (int)width;
+        return (int) width;
     }
 
     public void setWidth(double width) {
@@ -53,7 +53,7 @@ public class OpenDataVO implements Serializable{
     }
 
     public int getHeight() {
-        return (int)height;
+        return (int) height;
     }
 
     public void setHeight(double height) {

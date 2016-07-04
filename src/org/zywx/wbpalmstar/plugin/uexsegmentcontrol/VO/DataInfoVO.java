@@ -21,7 +21,7 @@ package org.zywx.wbpalmstar.plugin.uexsegmentcontrol.VO;
 import java.io.Serializable;
 import java.util.List;
 
-public class DataInfoVO implements Serializable{
+public class DataInfoVO implements Serializable {
     private static final long serialVersionUID = 8286156871688257537L;
     private int isExpand = 1;
     private List<String> allData;
@@ -64,36 +64,36 @@ public class DataInfoVO implements Serializable{
         this.maxShow = maxShow;
     }
 
-	public String getExpandOpenIcon() {
-		return expandOpenIcon;
-	}
+    public String getExpandOpenIcon() {
+        return expandOpenIcon;
+    }
 
-	public void setExpandOpenIcon(String expandOpenIcon) {
-		this.expandOpenIcon = expandOpenIcon;
-	}
+    public void setExpandOpenIcon(String expandOpenIcon) {
+        this.expandOpenIcon = expandOpenIcon;
+    }
 
-	public String getExpandCloseIcon() {
-		return expandCloseIcon;
-	}
+    public String getExpandCloseIcon() {
+        return expandCloseIcon;
+    }
 
-	public void setExpandCloseIcon(String expandCloseIcon) {
-		this.expandCloseIcon = expandCloseIcon;
-	}
+    public void setExpandCloseIcon(String expandCloseIcon) {
+        this.expandCloseIcon = expandCloseIcon;
+    }
 
-	public String getShowedLable() {
-		return showedLable;
-	}
+    public String getShowedLable() {
+        return showedLable;
+    }
 
-	public void setShowedLable(String showedLable) {
-		this.showedLable = showedLable;
-	}
+    public void setShowedLable(String showedLable) {
+        this.showedLable = showedLable;
+    }
 
-	public String getAddLable() {
-		return addLable;
-	}
+    public String getAddLable() {
+        return addLable;
+    }
 
-	public void setAddLable(String addLable) {
-		this.addLable = addLable;
-	}
+    public void setAddLable(String addLable) {
+        this.addLable = addLable;
+    }
 
 }

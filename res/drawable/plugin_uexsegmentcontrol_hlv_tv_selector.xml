@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:color="@color/plugin_uexsegmentcontrol_hlv_tv_focus" android:state_focused="false" android:state_pressed="false" android:state_selected="true"/>
-    <item android:color="@color/plugin_uexsegmentcontrol_hlv_tv_unfocus"/>
+    <item android:color="@color/plugin_uexsegmentcontrol_hlv_tv_focus" android:state_focused="false" android:state_pressed="false" android:state_selected="true" />
+    <item android:color="@color/plugin_uexsegmentcontrol_hlv_tv_unfocus" />
 </selector>

@@ -34,7 +34,7 @@ import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 public class ZYWXTabIndicator extends HorizontalScrollView {
-	private static final CharSequence EMPTY_TITLE = "";
+    private static final CharSequence EMPTY_TITLE = "";
     private Runnable mTabSelector;
     private LinearLayout mTabLayout;
     private int mSelectedTabIndex;
@@ -42,39 +42,39 @@ public class ZYWXTabIndicator extends HorizontalScrollView {
 
     private final OnClickListener mTabClickListener = new OnClickListener() {
         public void onClick(View view) {
-        	mSelectedTabIndex = view.getId();
-        	setCurrentItem(mSelectedTabIndex);
-        	if(onTabViewClickListener != null){
-        		onTabViewClickListener.onTabViewClick(mSelectedTabIndex, (TextView)((LinearLayout)view).getChildAt(0));
-        	}
+            mSelectedTabIndex = view.getId();
+            setCurrentItem(mSelectedTabIndex);
+            if (onTabViewClickListener != null) {
+                onTabViewClickListener.onTabViewClick(mSelectedTabIndex, (TextView) ((LinearLayout) view).getChildAt(0));
+            }
         }
     };
 
     public ZYWXTabIndicator(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
-	}
+        super(context, attrs, defStyle);
+    }
 
-	public ZYWXTabIndicator(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		setHorizontalScrollBarEnabled(false);
-		mTabLayout = new LinearLayout(context);
-		addView(mTabLayout, new ViewGroup.LayoutParams(WRAP_CONTENT, MATCH_PARENT));
-	}
+    public ZYWXTabIndicator(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        setHorizontalScrollBarEnabled(false);
+        mTabLayout = new LinearLayout(context);
+        addView(mTabLayout, new ViewGroup.LayoutParams(WRAP_CONTENT, MATCH_PARENT));
+    }
 
-	public ZYWXTabIndicator(Context context) {
-		super(context);
-	}
-	
+    public ZYWXTabIndicator(Context context) {
+        super(context);
+    }
+
     public void setOnTabViewClickListener(
-			OnTabViewClickListener onTabViewClickListener) {
-		this.onTabViewClickListener = onTabViewClickListener;
-	}
+            OnTabViewClickListener onTabViewClickListener) {
+        this.onTabViewClickListener = onTabViewClickListener;
+    }
 
     public int getSelectedTabIndex() {
-		return mSelectedTabIndex;
-	}
+        return mSelectedTabIndex;
+    }
 
-	private void animateToTab(final int position) {
+    private void animateToTab(final int position) {
         final View tabView = mTabLayout.getChildAt(position);
         if (mTabSelector != null) {
             removeCallbacks(mTabSelector);
@@ -106,21 +106,21 @@ public class ZYWXTabIndicator extends HorizontalScrollView {
     }
 
     private void addTab(int index, CharSequence text) {
-    	LinearLayout ll = (LinearLayout) View.inflate(getContext(),
+        LinearLayout ll = (LinearLayout) View.inflate(getContext(),
                 EUExUtil.getResLayoutID("plugin_uexsegmentcontrol_indicator_item"), null);
-    	TextView tabView = (TextView) ll.findViewById(EUExUtil.getResIdID("plugin_uexsegmentcontrol_hlv_tv"));
+        TextView tabView = (TextView) ll.findViewById(EUExUtil.getResIdID("plugin_uexsegmentcontrol_hlv_tv"));
         tabView.setText(text);
         ll.setId(index);
         ll.setFocusable(true);
         ll.setOnClickListener(mTabClickListener);
         mTabLayout.addView(ll, new LinearLayout.LayoutParams(0, MATCH_PARENT, 1));
     }
-    
+
     public void setIndicatorData(List<String> tabs) {
         mTabLayout.removeAllViews();
         final int count = tabs.size();
         for (int i = 0; i < count; i++) {
-        	CharSequence title = tabs.get(i);
+            CharSequence title = tabs.get(i);
             if (title == null) {
                 title = EMPTY_TITLE;
             }
@@ -135,8 +135,8 @@ public class ZYWXTabIndicator extends HorizontalScrollView {
 
     public void setCurrentItem(int item) {
         final int tabCount = mTabLayout.getChildCount();
-        if(item >= tabCount){
-        	item = tabCount - 1;
+        if (item >= tabCount) {
+            item = tabCount - 1;
         }
         mSelectedTabIndex = item;
         for (int i = 0; i < tabCount; i++) {
@@ -148,12 +148,12 @@ public class ZYWXTabIndicator extends HorizontalScrollView {
             }
         }
     }
-    
+
     public void clean() {
-    	mTabLayout.removeAllViews();
+        mTabLayout.removeAllViews();
     }
 
     public interface OnTabViewClickListener {
-		void onTabViewClick(int position, TextView view);
-	}
+        void onTabViewClick(int position, TextView view);
+    }
 }

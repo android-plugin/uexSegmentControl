@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
-	<plugin
+    <plugin
         className="org.zywx.wbpalmstar.plugin.uexsegmentcontrol.EUExSegmentControl" uexName="uexSegmentControl" >
         <method name="open" />
         <method name="close" />

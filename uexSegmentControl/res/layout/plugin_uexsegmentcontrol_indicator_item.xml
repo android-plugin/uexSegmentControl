@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/plugin_uexsegmentcontrol_hlv_tv"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:padding="8dp"
+    <TextView android:id="@+id/plugin_uexsegmentcontrol_hlv_tv" android:layout_weight="1"
+        android:layout_width="match_parent" android:layout_height="0dp" android:padding="8dp"
         android:textColor="@drawable/plugin_uexsegmentcontrol_hlv_tv_selector"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/plugin_uexsegmentcontrol_hlv_iv"
-        android:layout_width="match_parent"
+    <TextView android:id="@+id/plugin_uexsegmentcontrol_hlv_iv" android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@drawable/plugin_uexsegmentcontrol_hlv_iv_selector" />
 

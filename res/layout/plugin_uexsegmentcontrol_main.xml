@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <org.zywx.wbpalmstar.plugin.uexsegmentcontrol.ZYWXTabIndicator
             android:id="@+id/plugin_uexsegmentcontrol_ll_indicator"
@@ -52,18 +52,18 @@
         android:background="@color/white"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:visibility="gone" >
+        android:visibility="gone">
 
         <LinearLayout
             android:id="@+id/plugin_uexsegmentcontrol_fl_back"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="gone" >
+            android:visibility="gone">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <org.zywx.wbpalmstar.plugin.uexsegmentcontrol.DragGridView
                     android:id="@+id/plugin_uexsegmentcontrol_fl_back_titles"
@@ -89,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/plugin_uexsegmentcontrol_fl_add_title"
