@@ -1,76 +1,91 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
 
-    <script type="text/javascript">
+    <head>
+        <title>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="./css/index.css">
+        <script src="js/eruda.min.js"></script>
+        <script src="./js/index.js">
+        </script>
+    </head>
 
-	function show() {
-	var width = window.screen.width;
-	var height = window.screen.height - 300;
-		var obj={
-				left:0,
-				top:200,
-				width:width,
-				height:height,
-				dataInfo:{
-				    allData:["头条", "娱乐", "体育", "北京", "财经", "科技", "段子", "图片", "汽车", "时尚",
-				        "轻松一刻", "军事", "历史", "房产", "游戏", "彩票", "原创", "电台", "论坛", "博客",
-				        "社会", "电影", "NBA", "中国足球", "国际足球", "CBA", "跑步", "手机",
-                        "数码", "移动互联", "家居", "旅游", "健康", "读书", "酒香", "教育", "亲子", "葡萄酒",
-                        "暴雪游戏", "情感", "政务"],
-                    showData:["头条", "娱乐", "体育", "北京", "NBA","科技", "段子", "旅游", "汽车", "时尚"],
-                    maxShow:25,
-                    isExpand:1,
-                    expandOpenIcon:'',//'res://btn_edit.png',
-                    expandCloseIcon:'',//'res://1Normal.png',
-                    showedLable:'我的频道',
-                    addLable:'点击添加'
-			    }
-		};
-		uexSegmentControl.open(JSON.stringify(obj));
-	}
-	
-	function dismiss() {
-		uexSegmentControl.close();
-	}
-	
-	function ci() {
-		var ci = document.getElementById("ci").value;
-		var params = {
-		    index:ci
-		}
-		var data = JSON.stringify(params);
-		uexSegmentControl.setCurrentItem(data);
-	}
-	
-	window.uexOnload = function(){
-		
-		uexSegmentControl.onItemClick = function(data) {
-			alert(JSON.stringify(data));
-		}
-	    uexSegmentControl.onDataChange = function(data) {
-			alert(JSON.stringify(data));
-		}
-	}
-	
+    <body class="" ontouchstart>
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page_ylUCGd">
+            <div class="uh bc-head  ubb bc-border" data-control="HEADER" id="Header_bPMcMr">
+                <div class="ub">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="fa fa-1g ub-img1">
+                        </div>
+                    </div>
+                    <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">测试系统</h1>
+                    <div class="nav-btn" id="nav-right">
+                        <div class="fa  fa-1g  ub-img1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="pluginList"></div>
+        </div>
+        <script src="js/appcan.js">
+        </script>
+        <script src="js/appcan.control.js">
+        </script>
+        <script type="text/javascript">
+        var plugins = [
+            "uexFileMgr",
+            "uexXmlHttpMgr",
+            "uexUploaderMgr",
+            "uexDatabaseMgr",
+            "uexDownloaderMgr",
+            "uexDevice",
+            "uexSocketMgr",
+            "uexWeiXin",
+            "uexQQ",
+            "uexImage",
+            "uexAudio",
+            "uexButton",
+            "uexLocation",
+            "uexSina",
+            "uexChatKeyboard",
+            "uexCamera",
+            "uexIndexBar",
+            "uexVideo",
+            "uexControl",
+            "uexAliPay",
+            "uexScanner",
+            "uexActionSheet",
+            "uexBaiduMap",
+            "uexSecurityKeyboard",
+            "uexInputTextFieldView",
+            "uexBackground",
+            "uexGaodeNavi",
+            "uexBaiduNavi",
+            "uexSegmentControl"
+        ];
+        var dom = $("#pluginList")
+        plugins.forEach(function(aPlugin){
+            dom.append("<div class=\"btncss\" data-control=\"BOX\"><div class=\"button ub ub-ac bc-text-head ub-pc bc-btn\" onclick='openTestCase(\"" + aPlugin + "\")'>" + aPlugin + "</div></div>")
+        });
+        </script>
+        
+        
+        <script src="js/appcan.scrollbox.js">
+        </script>
+        <script src="js/template.import.js">
+        </script>
+        <script src="./assets/mvvm/index.js">
+        </script>
 
-    </script>
-</head>
+    </body>
 
-<body>
-<div class="tit">EUExSegmentControl</div>
-<div class="conbor">
-    <div class="consj">
-        <br><br><br><br><br><br><br>
-        <input type="button" class="btn" value="open" onclick=show()>
-        <input type="button" class="btn" value="close" onclick=dismiss()>
-        <input id="ci" type="text" class="text" value="0" maxLength="3">
-        <input type="button" class="btn" value="setCurrentItem" onclick=ci()>
-    </div>
-</div>
-</body>
 </html>
